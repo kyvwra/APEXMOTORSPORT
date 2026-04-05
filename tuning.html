@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuning & Dyno | Apex Motorsport</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body style="background: var(--bg-alt);">
+
+  <nav class="navbar">
+    <div class="nav-left"><a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> ACASĂ</a></div>
+    <div class="nav-center"></div>
+    <div class="nav-right"><button class="btn-nav" id="openBookingBtn">PROGRAMARE</button></div>
+  </nav>
+
+  <header class="hero-tuning">
+    <div class="hero-content">
+      <h1 class="hero-title">ENGINE & <span class="glow-text">PERFORMANCE</span></h1>
+    </div>
+  </header>
+
+  <section class="dyno-section">
+    <div class="menu-header">
+      <span class="eyebrow">Cifre Reale</span>
+      <h2 class="section-title">DYNO TEST EXAMPLES</h2>
+    </div>
+    <div class="dyno-container" id="dynoTrigger">
+      
+      <div class="dyno-row">
+        <div class="dyno-label"><span>BMW M340i - Stock</span><span>374 CP / 500 Nm</span></div>
+        <div class="dyno-track"><div class="dyno-fill stock" data-width="50%"></div></div>
+      </div>
+      <div class="dyno-row">
+        <div class="dyno-label"><span>BMW M340i - Apex Stage 1</span><span>440 CP / 600 Nm</span></div>
+        <div class="dyno-track"><div class="dyno-fill apex" data-width="70%"></div></div>
+      </div>
+      <div class="dyno-row" style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 30px;">
+        <div class="dyno-label"><span style="color: var(--racing-red);">BMW M340i - Apex Stage 2</span><span style="color: var(--racing-red);">480 CP / 680 Nm</span></div>
+        <div class="dyno-track"><div class="dyno-fill apex" data-width="95%"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="build-simulator-section">
+    <div class="menu-header">
+      <span class="eyebrow">Alege-ți Arma</span>
+      <h2 class="section-title" style="color: #fff;">CUSTOM BUILD SIMULATOR</h2>
+      <p style="color: var(--text-dim); max-width: 600px; margin: 15px auto 0;">Configurează platformele populare. Bifează modificările și urmărește telemetria.</p>
+    </div>
+
+    <div class="simulator-container">
+      <div class="car-selector">
+        <button class="btn-car active" onclick="window.loadCar('audi')">AUDI RS6 (C8)</button>
+        <button class="btn-car" onclick="window.loadCar('porsche')">PORSCHE 911 TURBO</button>
+        <button class="btn-car" onclick="window.loadCar('mercedes')">AMG E63S</button>
+      </div>
+
+      <div class="simulator-grid">
+        <div class="mods-panel">
+          <h4 style="color: #fff; font-family: var(--font-heading); font-size: 20px; margin-bottom: 20px; border-bottom: 2px solid var(--text-dark); padding-bottom: 10px;">Piese & Soft</h4>
+          <div id="mods-list">
+            </div>
+        </div>
+
+        <div class="stats-panel">
+          <h4 style="color: #fff; font-family: var(--font-heading); font-size: 20px; margin-bottom: 20px; border-bottom: 2px solid var(--racing-red); padding-bottom: 10px;">TELEMETRIE ESTIMATĂ</h4>
+          
+          <div class="live-stat">
+            <span class="stat-name">PUTERE (HP)</span>
+            <div class="stat-numbers">
+              <span class="stat-stock" id="stat-hp-stock">600</span>
+              <i class="fa-solid fa-arrow-right"></i>
+              <span class="stat-tuned" id="stat-hp-tuned">600</span>
+            </div>
+          </div>
+
+          <div class="live-stat">
+            <span class="stat-name">CUPLU (Nm)</span>
+            <div class="stat-numbers">
+              <span class="stat-stock" id="stat-nm-stock">800</span>
+              <i class="fa-solid fa-arrow-right"></i>
+              <span class="stat-tuned" id="stat-nm-tuned">800</span>
+            </div>
+          </div>
+
+          <div class="live-stat">
+            <span class="stat-name">0 - 100 km/h (Sec)</span>
+            <div class="stat-numbers">
+              <span class="stat-stock" id="stat-time-stock">3.6s</span>
+              <i class="fa-solid fa-arrow-right"></i>
+              <span class="stat-tuned" id="stat-time-tuned">3.6s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

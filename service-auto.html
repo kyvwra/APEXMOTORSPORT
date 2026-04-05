@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance & VIP | Apex Motorsport</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body style="background: var(--bg-alt);">
+
+  <nav class="navbar">
+    <div class="nav-left"><a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> ACASĂ</a></div>
+    <div class="nav-right"><button class="btn-nav" id="openBookingBtn">PROGRAMARE</button></div>
+  </nav>
+
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="booking-modal" id="bookingModal">
+    <button class="close-menu" id="closeModalBtn" style="top:15px; right:15px;">✕</button>
+    <div class="booking-form">
+      <h2>RESERVĂ O SESIUNE</h2>
+      <label>Nume Complet</label><input type="text" placeholder="Numele tău">
+      <label>Model Auto</label><input type="text" placeholder="Ex: BMW M4">
+      <button class="btn-submit-disabled" disabled>TRIMITE (INACTIV)</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="transportOverlay" style="z-index: 4000;"></div>
+  <div class="booking-modal" id="transportModal" style="z-index: 4001;">
+    <button class="close-menu" id="closeTransportBtn" style="top:15px; right:15px;">✕</button>
+    <div class="booking-form">
+      <h2 style="color: var(--racing-red);">SOLICITĂ TRANSPORT ENCLOSED</h2>
+      <p style="color: var(--text-dim); margin-bottom: 20px;">Preluare securizată de la domiciliu.</p>
+      <label>Locație Preluare</label><input type="text" placeholder="Oraș / Adresă">
+      <label>Valoare Estimată Vehicul</label><input type="text" placeholder="Pentru asigurare (EUR)">
+      <button class="btn-submit-disabled" disabled>SOLICITĂ COTAȚIE (INACTIV)</button>
+    </div>
+  </div>
+
+  <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+  <div class="side-menu" id="sideMenu">
+    <button class="close-menu" id="closeMenuBtn">✕</button>
+    <ul class="main-nav-list">
+      <li><a href="service-auto.html" class="nav-link-main" style="color: var(--racing-red);">SERVICII</a></li>
+      <li><a href="tuning.html" class="nav-link-main">TUNING & DYNO</a></li>
+      <li><a href="blog.html" class="nav-link-main">ENGINE BLOG</a></li>
+    </ul>
+  </div>
+
+  <header class="hero-tuning">
+    <div class="hero-content">
+      <span class="eyebrow" style="margin-bottom: 10px;">Mentenanță Oficială</span>
+      <h1 class="hero-title">MAINTENANCE <span class="glow-text">& VIP</span></h1>
+    </div>
+  </header>
+
+  <section class="track-day-section vip-transport">
+    <div class="track-content">
+      <span class="eyebrow" style="color: var(--racing-red);">Logistică Premium</span>
+      <h2>VIP ENCLOSED<br><span>TRANSPORT</span></h2>
+      <p>Siguranța investiției tale este prioritatea zero. Oferim preluarea și livrarea mașinii direct de la domiciliul tău, folosind o platformă complet închisă și asigurată la valoarea integrală a vehiculului. Zero kilometri rulați inutil, zero riscuri pe drum.</p>
+      <button class="btn-neon" id="openTransportBtn" style="background: var(--text-dark); color: #fff; margin-top: 20px;">SOLICITĂ TRANSPORT</button>
+    </div>
+  </section>
+
+  <section class="services-menu">
+    <div class="service-block" id="diagnoza">
+      <div class="service-header"><h3>Diagnoză & Telemetrie</h3></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Scanare ODB2 Completă</span><p class="service-desc">Citire erori pe toate modulele și interpretare.</p></div><span class="variant-price">100 RON</span></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Adaptări & Codări ECU</span><p class="service-desc">Activare funcții ascunse specifice brandului.</p></div><span class="variant-price">150 RON</span></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Logare Parametri în Mers</span><p class="service-desc">Analiză presiune turbo, rateuri aprindere.</p></div><span class="variant-price">250 RON</span></div>
+    </div>
+
+    <div class="service-block" id="mecanica">
+      <div class="service-header"><h3>Mecanică de Precizie</h3></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Schimb Plăcuțe & Discuri</span><p class="service-desc">Manoperă sistem frânare (preț per punte).</p></div><span class="variant-price">150 RON</span></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Înlocuire Kit Distribuție</span><p class="service-desc">Manoperă calibrare distribuție (preț de la).</p></div><span class="variant-price">800 RON</span></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Montaj Piese Aftermarket</span><p class="service-desc">Instalare admisii, intercoolere, suspensii KW.</p></div><span class="variant-price">Pe Deviz</span></div>
+    </div>
+
+    <div class="service-block" id="revizie">
+      <div class="service-header"><h3>Mentenanță / Revizii</h3></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Revizie Standard (Ulei+Filtre)</span><p class="service-desc">Manoperă înlocuire consumabile premium.</p></div><span class="variant-price">200 RON</span></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Schimb Ulei Cutie Automată</span><p class="service-desc">Procedură "Flush" completă cu aparat presurizat.</p></div><span class="variant-price">600 RON</span></div>
+      <div class="variant-row"><div class="variant-info"><span class="service-name">Înlocuire Lichid Frână (Racing)</span><p class="service-desc">Schimb lichid cu punct înalt de fierbere.</p></div><span class="variant-price">200 RON</span></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

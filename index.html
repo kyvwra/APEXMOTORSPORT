@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Motorsport | Precision & Performance</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="nav-left"><button class="hamburger-btn" id="hamburgerBtn"><i class="fa-solid fa-bars"></i> MENIU</button></div>
+    <div class="nav-right">
+      <button class="btn-nav" id="openBookingBtn">PROGRAMARE</button>
+    </div>
+  </nav>
+
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="booking-modal" id="bookingModal">
+    <button class="close-menu" id="closeModalBtn" style="top:15px; right:15px;">✕</button>
+    <div class="booking-form">
+      <h2>RESERVĂ O SESIUNE</h2>
+      <label>Nume Complet</label><input type="text" placeholder="Numele tău">
+      <label>Model Auto & An</label><input type="text" placeholder="Ex: BMW M4 2023">
+      <label>Serviciu Dorit</label>
+      <select>
+        <option>Stage 1 Tuning</option>
+        <option>Dyno Session</option>
+        <option>Mentenanță VIP</option>
+      </select>
+      <label>Mesaj / Detalii</label><textarea rows="3"></textarea>
+      <button class="btn-submit-disabled" disabled>TRIMITE SOLICITARE (INACTIV)</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="blogModalOverlay" style="z-index: 3500;"></div>
+  <div class="booking-modal" id="blogContentModal" style="max-width: 800px; max-height: 85vh; overflow-y: auto; z-index: 3600;">
+    <button class="close-menu" onclick="closeBlogModal()" style="top:15px; right:15px;">✕</button>
+    <div id="blogPostContainer"></div>
+  </div>
+
+  <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+  <div class="side-menu" id="sideMenu">
+    <button class="close-menu" id="closeMenuBtn">✕</button>
+    <ul class="main-nav-list">
+      <li><a href="service-auto.html" class="nav-link-main">SERVICII</a></li>
+      <li><a href="tuning.html" class="nav-link-main" style="color: var(--racing-red);">TUNING & DYNO</a></li>
+      <li><a href="blog.html" class="nav-link-main">ENGINE BLOG</a></li>
+    </ul>
+  </div>
+
+  <header class="hero" style="background: linear-gradient(to bottom, rgba(17,18,21,0.7), rgba(17,18,21,0.5)), url('https://images.unsplash.com/photo-1614200187524-dc4b892acf16?q=80&w=1920&auto=format&fit=crop') center/cover;">
+    <div class="hero-content">
+      <div class="hero-brand">APEX MOTORSPORT</div>
+      <h1 class="hero-title">PERFORMANȚĂ <span class="glow-text">BRUTĂ</span></h1>
+    </div>
+  </header>
+
+  <div class="brands-bar">
+    <span class="brand-title">// ECHIPAMENT OMOLOGAT:</span>
+    <span class="brand-name">MOTUL</span><span class="brand-name">BREMBO</span><span class="brand-name">AKRAPOVIČ</span><span class="brand-name">RUPES</span>
+  </div>
+
+  <section class="premium-services">
+    <div class="menu-header"><span class="eyebrow">Evoluție Auto</span><h2 class="section-title">PERFORMANCE STAGES</h2></div>
+    <div class="packages-grid">
+      <div class="package-card">
+        <h3>STAGE 1: STREET</h3>
+        <ul><li>Inspecție Multi-Punct (360°)</li><li>Schimb Ulei și Filtre Premium</li><li>Igienizare Sistem Climatizare</li></ul>
+        <div class="package-price">450 RON</div>
+      </div>
+      <div class="package-card featured">
+        <h3>STAGE 2: TRACK PREP</h3>
+        <ul><li>Diagnoză Telemetrică Avansată</li><li>Verificare Lichid Frână Racing</li><li>Protecție Ceramică 1 An</li></ul>
+        <div class="package-price">1500 RON</div>
+      </div>
+      <div class="package-card">
+        <h3>STAGE 3: CONCOURS</h3>
+        <ul><li>Corecție Vopsea Extremă (3 Pași)</li><li>Protecție Ceramică 9H (2 Ani)</li><li>Curățare Compartiment Motor</li></ul>
+        <div class="package-price">3200 RON</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="telemetry-section">
+    <div class="telemetry-grid">
+      <div class="stat-block"><h3 class="counter" data-target="850">0</h3><p>Proiecte Livrate</p></div>
+      <div class="stat-block"><h3 class="counter" data-target="15000">0</h3><p>Cai Putere Adăugați</p></div>
+      <div class="stat-block"><h3><span class="counter" data-target="99">0</span>%</h3><p>Precizie Diagnostic</p></div>
+    </div>
+  </section>
+
+  <section class="protocol-section">
+    <div class="protocol-container">
+      <div class="protocol-info">
+        <span class="eyebrow">Standarde Stricte</span>
+        <h2 class="section-title">FLUX DE LUCRU</h2>
+        <p>Acuratețea nu este o opțiune, este singura noastră metodă. Nu lăsăm nimic la voia întâmplării.</p>
+      </div>
+      <div class="protocol-list">
+        <div class="protocol-item"><h4>TELEMETRIE INIȚIALĂ</h4><p>Scanare electronică completă și inspecție vizuală detaliată la recepție.</p></div>
+        <div class="protocol-item"><h4>STRATEGIE & DEVIZ</h4><p>Dezvoltarea planului de intervenție tehnică și costuri transparente comunicate în avans.</p></div>
+        <div class="protocol-item"><h4>CALIBRARE & EXECUȚIE</h4><p>Intervenții realizate exclusiv cu scule dinamometrice și echipamente de top.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="track-day-section">
+    <div class="track-img"></div>
+    <div class="track-content">
+      <span class="eyebrow" style="color: #fff;">Serviciu VIP</span>
+      <h2>TRACK-DAY<br><span style="color: var(--racing-red);">CONCIERGE</span></h2>
+      <p>Nu lucrăm doar în garaj, venim cu tine pe circuit. Oferim asistență tehnică completă direct în Pit-Lane.</p>
+      <button class="btn-neon" id="openBookingBtn2">SOLICITĂ ASISTENȚĂ</button>
+    </div>
+  </section>
+
+  <section class="blog-section" id="blog-home">
+    <div class="menu-header"><span class="eyebrow">Insights</span><h2 class="section-title">LATEST FROM BLOG</h2></div>
+    <div class="blog-grid">
+      <div class="blog-card" onclick="openBlogModal('stage1')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Mituri Stage 1</h3><p>Software vs Fiabilitate: Adevărul despre optimizarea ECU.</p><span class="blog-link" style="cursor:pointer; color:var(--racing-red); font-weight:700;">CITEȘTE →</span></div>
+      </div>
+      <div class="blog-card" onclick="openBlogModal('dyno')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Analiza Dyno</h3><p>Importanța măsurării puterii pe un stand real.</p><span class="blog-link" style="cursor:pointer; color:var(--racing-red); font-weight:700;">CITEȘTE →</span></div>
+      </div>
+      <div class="blog-card" onclick="openBlogModal('engine')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Engine Building</h3><p>Componente forjate și pragul de 800 HP.</p><span class="blog-link" style="cursor:pointer; color:var(--racing-red); font-weight:700;">CITEȘTE →</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitcrew-section">
+    <div class="menu-header"><span class="eyebrow">Experți Certificați</span><h2 class="section-title">APEX PIT CREW</h2></div>
+    <div class="crew-grid">
+      <div class="crew-card">
+        <div class="crew-number">01</div>
+        <div class="crew-details"><h4>ALEXANDRU T.</h4><span class="crew-role">Master Engine Builder</span></div>
+      </div>
+      <div class="crew-card">
+        <div class="crew-number">02</div>
+        <div class="crew-details"><h4>VICTOR M.</h4><span class="crew-role">Detailing & PPF Spec.</span></div>
+      </div>
+      <div class="crew-card">
+        <div class="crew-number">03</div>
+        <div class="crew-details"><h4>MARIUS D.</h4><span class="crew-role">Dyno Calibrator</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feedback-section">
+    <div class="menu-header"><span class="eyebrow">Rezultate</span><h2 class="section-title">DRIVER FEEDBACK</h2></div>
+    <div class="feedback-grid">
+      <div class="feedback-block">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Acuratețea cu care lucrează este ireală. Stage 2 Track Prep a transformat complet mașina."</p>
+        <h5>// ANDREI V. - PORSCHE 911</h5>
+      </div>
+      <div class="feedback-block">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Transparență totală. Fără costuri ascunse."</p>
+        <h5>// BOGDAN M. - BMW M4</h5>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>APEX MOTORSPORT</h4>
+        <p>Performanță și precizie în tuning și întreținere auto premium.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>LOCAȚIE</h4><p>Șoseaua Pipera Nr. 42, București</p><a href="#" class="footer-btn">GOOGLE MAPS</a></div>
+      <div class="footer-col"><h4>PROGRAM</h4><span>Luni - Vineri: 09:00 - 18:00</span><span>Sâmbătă: 10:00 - 14:00</span></div>
+    </div>
+    <div class="footer-bottom">© 2026 APEX MOTORSPORT. TOATE DREPTURILE REZERVATE.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

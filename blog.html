@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engine Blog | Apex Motorsport</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left"><a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> ACASĂ</a></div>
+    <div class="nav-right"><button class="btn-nav" id="openBookingBtn">PROGRAMARE</button></div>
+  </nav>
+
+  <div class="modal-overlay" id="blogModalOverlay" style="z-index: 3500;"></div>
+  <div class="booking-modal" id="blogContentModal" style="max-width: 800px; max-height: 85vh; overflow-y: auto; z-index: 3600;">
+    <button class="close-menu" onclick="closeBlogModal()" style="top:15px; right:15px;">✕</button>
+    <div id="blogPostContainer"></div>
+  </div>
+
+  <header class="hero-tuning">
+    <div class="hero-content">
+      <h1 class="hero-title">ENGINE <span class="glow-text">BLOG</span></h1>
+    </div>
+  </header>
+
+  <section class="blog-section">
+    <div class="blog-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      
+      <div class="blog-card" onclick="openBlogModal('stage1')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Mituri Stage 1</h3><p>Software vs Fiabilitate.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('dyno')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Analiza Dyno</h3><p>Măsurarea puterii pe stand.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('engine')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Engine Building</h3><p>Piese forjate și limite.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('turbo')">
+        <div class="blog-img" style="background-image: url('https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+        <div class="blog-content"><h3>Turbo Upgrades</h3><p>Hybrid vs Big Turbo Kits.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('oil')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Racing Oils</h3><p>Protecție la 130°C.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('brakes')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Brake Systems</h3><p>Oprire precisă pe circuit.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('tcu')">
+        <div class="blog-img" style="background-image: url('https://images.pexels.com/photos/3136673/pexels-photo-3136673.jpeg?auto=compress&cs=tinysrgb&w=800');"></div>
+        <div class="blog-content"><h3>TCU Tuning</h3><p>Viteza de schimbare cutie.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('exhaust')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Exhaust Flow</h3><p>Sunet și rezonanță.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('ppf')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Ceramic & PPF</h3><p>Protecție estetică.</p></div>
+      </div>
+
+      <div class="blog-card" onclick="openBlogModal('cooling')">
+        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=800');"></div>
+        <div class="blog-content"><h3>Cooling</h3><p>Management termic.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">© 2026 APEX MOTORSPORT. TOATE DREPTURILE REZERVATE.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
